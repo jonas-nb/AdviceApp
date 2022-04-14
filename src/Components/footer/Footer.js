@@ -5,16 +5,23 @@ import { IoLogoLinkedin, IoLogoGithub } from "react-icons/io";
 
 const Footer = () => {
   return (
-    <div className="w-full flex items-end justify-end border mb-10">
-      <div className="w-32 flex justify-around place-content-end  text-blue-300 text-5xl ">
-        <a href="https://www.linkedin.com/in/jonas-batista-b77b24137/">
-          <IoLogoLinkedin className="text-6xl" />
-        </a>
-        <a href="https://github.com/jonas-nb">
-          <IoLogoGithub className="text-6xl" />
-        </a>
+    <>
+      <div className="w-full sm:h-10 flex items-end justify-end">
+        <div className="w-32 flex justify-around   text-blue-300  text-4xl md:text-6xl">
+          <a
+            href="https://www.linkedin.com/in/jonas-batista-b77b24137/"
+            target={"_blank"}
+            className="hover:text-blue-400"
+          >
+            <IoLogoLinkedin className="" />
+          </a>
+          <a href="https://github.com/jonas-nb" target={"_blank"}>
+            <IoLogoGithub className="hover:text-blue-400" />
+          </a>
+        </div>
       </div>
-    </div>
+      <h3 className="text-white/50 p-1">By Jonas Batista</h3>
+    </>
   );
 };
 
