@@ -20,7 +20,7 @@ const Footer = () => {
           </a>
         </div>
       </div>
-      <h3 className="text-white/50 p-1">By Jonas Batista</h3>
+      <h3 className="text-white/50 p-1">Made with ❤ By Jonas Batista</h3>
     </>
   );
 };
