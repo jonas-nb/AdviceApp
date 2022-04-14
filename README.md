@@ -1,8 +1,10 @@
-# Getting Started with Create React App
+<h1>Advice App</h1>
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+## About Project
+The application randomly generates fun and thoughtful advice for its user.
+## Getting started
 
 In the project directory, you can run:
 
