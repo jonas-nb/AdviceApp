@@ -1,6 +1,5 @@
 <h1>Advice App</h1>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## About Project
 The application randomly generates fun and thoughtful advice for its user.
