@@ -14,7 +14,9 @@ const Main = () => {
     setStateLoading(false);
     const newAdvice = await api.json();
     setAdvice(newAdvice.slip.advice);
-    setStateLoading(true);
+    setTimeout(() => {
+      setStateLoading(true);
+    }, 300);
   };
 
   // function with fetch api
