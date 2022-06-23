@@ -1,14 +1,15 @@
 /** @format */
 
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { api } from "../../api";
+import { MdShuffle } from "react-icons/md";
 
 const Main = () => {
   let [advice, setAdvice] = useState(
     "Click the button below to receive new advice."
   );
+
   const [stateLoading, setStateLoading] = useState(true);
-  // this code below make rhe request api
 
   let loadAdvice = async () => {
     setStateLoading(false);
@@ -19,33 +20,29 @@ const Main = () => {
     }, 300);
   };
 
-  // function with fetch api
-  /* let loadAdvice = () => {
-      fetch("https://api.adviceslip.com/advice")
-        .then((response) => response.json())
-        .then((json) => setAdvice(json.slip.advice));
-    } */
-
   return (
-    <div className="flex flex-col w-full justify-around items-center h-2/6 sm:h-4/6 md:h-2/6 lg:h-3/6">
-      <div className="w-64 p-3 backdrop-blur-3xl bg-white/10 rounded-md shadow-md shadow-blue-500/3 md:w-6/12">
+    <div className="border h-72 border-green-300 flex flex-col w-full justify-around items-center h-2/6 sm:h-4/6 md:h-2/6 lg:h-3/6">
+      <div className="flex items-center flex-col w-64 h-52 p-3 backdrop-blur-3xl bg-white/10 rounded-md shadow-md shadow-blue-500/3 md:w-6/12">
         {stateLoading === false ? (
-          <div className="text-center text-white ">
+          <div className="w-full flex items-center justify-center text-white">
             looking for new advice...
           </div>
         ) : (
-          <p className="text-white text-xl text-center sm:text-md md:text-2xl ">
+          <p className="text-white  text-lg text-center sm:text-md md:text-2xl w-full">
             {advice}
           </p>
         )}
+        <button
+          onClick={loadAdvice}
+          className={
+            stateLoading === true
+              ? "bg-green-400 flex justify-center items-center w-16 h-16 fixed top-44 text-4xl  text-white hover:bg-green-500 shadow-[0_0px_50px_15px_rgba(0,0,0,0.3)] shadow-green-900 rounded-full"
+              : "bg-green-400 flex justify-center items-center w-16 h-16 fixed top-44 text-4xl  text-white hover:bg-green-500  rounded-full"
+          }
+        >
+          <MdShuffle />
+        </button>
       </div>
-
-      <button
-        onClick={loadAdvice}
-        className="w-32 h-11  text-white bg-blue-400 hover:bg-blue-500 shadow-xl hover:shadow-blue-300/5 rounded-md"
-      >
-        Refresh
-      </button>
     </div>
   );
 };
