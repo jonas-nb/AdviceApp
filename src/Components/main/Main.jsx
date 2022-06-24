@@ -1,24 +1,25 @@
 /** @format */
 
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { api } from "../../api";
 import { MdShuffle } from "react-icons/md";
+import { ContextStyle } from "../contexts/ContextCss";
 
 const Main = () => {
   let [advice, setAdvice] = useState(
     "Click the button below to receive new advice."
   );
 
-  const [stateLoading, setStateLoading] = useState(false);
-  const [adviceState, setAdviceState] = useState(true);
-
+  const { btnState, setBtnState, adviceState, setAdviceState } =
+    useContext(ContextStyle);
+  console.log(btnState);
   let loadAdvice = async () => {
-    setStateLoading(false);
     setAdviceState(false);
+    setBtnState(false);
     const newAdvice = await api.json();
     setAdvice(newAdvice.slip.advice);
     setTimeout(() => {
-      setStateLoading(true);
+      setBtnState(true);
       setAdviceState(true);
     }, 300);
   };
@@ -38,7 +39,7 @@ const Main = () => {
         <button
           onClick={loadAdvice}
           className={
-            stateLoading === true
+            btnState === true
               ? "transition duration-700 ring-offset-2 ring-offset-green-200 ring-1 ring-green-300 bg-green-400  flex justify-center items-center w-16 h-16 fixed top-44 text-4xl  text-white hover:bg-green-500 shadow-[0_0px_50px_15px_rgba(0,0,0,0.3)] shadow-green-900 rounded-full"
               : "bg-green-400 flex justify-center items-center w-16 h-16 fixed top-44 text-4xl  text-white hover:bg-green-500  rounded-full"
           }
