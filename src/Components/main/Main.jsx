@@ -9,22 +9,25 @@ const Main = () => {
     "Click the button below to receive new advice."
   );
 
-  const [stateLoading, setStateLoading] = useState(true);
+  const [stateLoading, setStateLoading] = useState(false);
+  const [adviceState, setAdviceState] = useState(true);
 
   let loadAdvice = async () => {
     setStateLoading(false);
+    setAdviceState(false);
     const newAdvice = await api.json();
     setAdvice(newAdvice.slip.advice);
     setTimeout(() => {
       setStateLoading(true);
+      setAdviceState(true);
     }, 300);
   };
 
   return (
-    <div className="border h-72 border-green-300 flex flex-col w-full justify-around items-center h-2/6 sm:h-4/6 md:h-2/6 lg:h-3/6">
-      <div className="flex items-center flex-col w-64 h-52 p-3 backdrop-blur-3xl bg-white/10 rounded-md shadow-md shadow-blue-500/3 md:w-6/12">
-        {stateLoading === false ? (
-          <div className="w-full flex items-center justify-center text-white">
+    <div className="h-72 flex flex-col w-full justify-around items-center h-2/6 sm:h-4/6 md:h-2/6 lg:h-3/6">
+      <div className="flex items-center justify-center flex-col w-64 h-52 p-3 backdrop-blur-3xl bg-white/10 rounded-md shadow-md shadow-blue-500/3 md:w-6/12">
+        {adviceState === false ? (
+          <div className="border h-20 w-full flex items-center justify-center text-white text-xl font-semibold">
             looking for new advice...
           </div>
         ) : (
@@ -36,7 +39,7 @@ const Main = () => {
           onClick={loadAdvice}
           className={
             stateLoading === true
-              ? "bg-green-400 flex justify-center items-center w-16 h-16 fixed top-44 text-4xl  text-white hover:bg-green-500 shadow-[0_0px_50px_15px_rgba(0,0,0,0.3)] shadow-green-900 rounded-full"
+              ? "transition duration-700 ring-offset-2 ring-offset-green-200 ring-1 ring-green-300 bg-green-400  flex justify-center items-center w-16 h-16 fixed top-44 text-4xl  text-white hover:bg-green-500 shadow-[0_0px_50px_15px_rgba(0,0,0,0.3)] shadow-green-900 rounded-full"
               : "bg-green-400 flex justify-center items-center w-16 h-16 fixed top-44 text-4xl  text-white hover:bg-green-500  rounded-full"
           }
         >
