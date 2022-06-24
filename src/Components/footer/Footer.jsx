@@ -6,7 +6,7 @@ import { ContextStyle } from '../contexts/ContextCss';
 
 const Footer = () => {
     const { btnState } = useContext(ContextStyle);
-    console.log(btnState);
+
     return (
         <>
             <div className="flex justify-end pr-3">
