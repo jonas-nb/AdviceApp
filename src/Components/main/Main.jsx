@@ -31,11 +31,11 @@ const Main = () => {
         <div className="h-72 flex flex-col w-full justify-around items-center h-2/6 sm:h-4/6 md:h-2/6 lg:h-3/6">
             <div className="flex items-center justify-center flex-col w-64 h-52 p-3 backdrop-blur-3xl bg-white/10 rounded-md shadow-md shadow-blue-500/3 md:w-6/12">
                 {adviceState === false ? (
-                    <div className="border h-20 w-full flex items-center justify-center text-white text-xl font-semibold">
+                    <div className="h-20 w-full flex items-center justify-center text-white text-xl font-semibold">
                         looking for new advice...
                     </div>
                 ) : (
-                    <p className="text-white  text-lg text-center sm:text-md md:text-2xl w-full">
+                    <p className="text-white font-semibold text-lg text-center sm:text-md md:text-2xl w-full">
                         {advice}
                     </p>
                 )}
