@@ -1,14 +1,11 @@
 import React from 'react';
-import { api } from './api';
-
+import Container from './Components/Container';
+import Footer from './Components/Footer';
 const App = () => {
-    console.log(api);
-
     return (
-        <div>
-            <div>
-                <div></div>
-            </div>
+        <div className="w-full h-screen bg-[#1f2632]">
+            <Container />
+            <Footer />
         </div>
     );
 };
