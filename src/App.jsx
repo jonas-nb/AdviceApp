@@ -1,21 +1,15 @@
-/** @format */
-
-import Footer from "./Components/footer/Footer";
-import Header from "./Components/Header/Header";
-import Main from "./Components/main/Main";
-import { StyleStorage } from "./Components/contexts/ContextCss";
-function App() {
-  return (
-    <>
-      <StyleStorage>
-        <div className="bg-[#000017] h-screen flex flex-col justify-between">
-          <Header />
-          <Main />
-          <Footer />
+import React from 'react';
+import Container from './Components/Container';
+import Footer from './Components/Footer';
+const App = () => {
+    return (
+        <div className="w-full h-screen grid bg-[#1f2632]">
+            <div className="self-center">
+                <Container />
+            </div>
+            <div className="self-end">
+                <Footer />
+            </div>
         </div>
-      </StyleStorage>
-    </>
-  );
-}
-
-export default App;
+    );
+};
