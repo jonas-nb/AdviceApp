@@ -32,7 +32,7 @@ Instale AdviceApp com npm
 Para fazer o deploy desse projeto rode
 
 ```bash
-  npm vite build
+  npm run build
 ```
 
 <br/>
