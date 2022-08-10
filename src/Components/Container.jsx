@@ -1,7 +1,6 @@
 import axios from 'axios';
 import React, { useState } from 'react';
 import PatternMobile from '../assets/images/pattern-mobile.svg';
-import PatternDesktop from '../assets/images/pattern-desktop.svg';
 import mainIcon from '../assets/images/icon-dice.svg';
 
 const Container = () => {
