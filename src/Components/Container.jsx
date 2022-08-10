@@ -5,7 +5,7 @@ import PatternDesktop from '../assets/images/pattern-desktop.svg';
 import mainIcon from '../assets/images/icon-dice.svg';
 
 const Container = () => {
-    const [adviceNumber, setAdviceNumber] = useState();
+    const [adviceNumber, setAdviceNumber] = useState(0);
     const [advice, setAdvice] = useState(
         'Click the button below to generate an advice'
     );
@@ -24,17 +24,24 @@ const Container = () => {
     };
 
     return (
-        <div className=" m-auto flex flex-col justify-around items-center max-w-[320px] h-72 bg-[#4e5d73] rounded-lg">
-            <div className="text-[#52ffa8] text-lg tracking-wider">
-                <small>
+        <div className=" m-auto flex flex-col justify-center items-center max-w-[320px] xl:max-w-[500px] h-72 bg-[#313a49] rounded-lg">
+            <div className="mt-10 text-[#52ffa8] text-lg tracking-widest">
+                <small className="uppercase">
                     Advice <span>#{adviceNumber}</span>
                 </small>
             </div>
-            <div className="border border-red-500 flex flex-col justify-between text-center text-[#fff]">
-                <p className="p-5 text-xl">{advice}</p>
-                <img src={PatternMobile} alt="divisor meramente ilustrativo" />
+            <div className="flex flex-col justify-center text-center text-[#fff] h-52">
+                <p className="p-3 text-lg xl:text-xl">{advice}</p>
             </div>
-            <button onClick={adviceGenerator}>
+            <img
+                className="m-auto w-10/12 h-3 xl:h-10 "
+                src={PatternMobile}
+                alt="divisor meramente ilustrativo"
+            />
+            <button
+                className="bg-[#53ffab] hover:shadow-[0px_0px_25px_2px_#53ffab] duration-300 h-[5rem] xl:h-20 w-[3.6rem] xl:w-[3.4rem] rounded-full flex items-center justify-center relative top-7"
+                onClick={adviceGenerator}
+            >
                 <img src={mainIcon} alt="" />
             </button>
         </div>
